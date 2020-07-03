@@ -1,4 +1,4 @@
-package com.me.registrationtask
+package com.me.learning
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

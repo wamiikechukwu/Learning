@@ -1,4 +1,4 @@
-package com.me.registrationtask
+package com.me.learning
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
