@@ -1,0 +1,3 @@
+package com.me.registrationtask
+
+class RegistrationTaskTest
