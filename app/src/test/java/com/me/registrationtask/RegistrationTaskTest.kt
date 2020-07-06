@@ -36,7 +36,7 @@ class RegistrationTaskTest {
         registrationTask = RegistrationTask(userRepository)
     }
 
-    @Test(expected = IllegalArgumentException::class)
+    @Test()
     fun shouldThrowAnExceptionWhenUserNameIsEmpty() {
         val testUserName = fakeUserEntity
         testUserName.Username = ""
