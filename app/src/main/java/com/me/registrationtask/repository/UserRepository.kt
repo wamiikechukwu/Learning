@@ -6,10 +6,10 @@ import com.me.registrationtask.module.UserEntity
 class UserRepository(val userDao: UserDao) :
     IUserRepository {
     override fun saveUser(user: UserEntity) {
-        TODO("Not yet implemented")
+        userDao.saveUser(user)
     }
 
-    override fun login(Username: String, password: String): UserEntity {
-        TODO("Not yet implemented")
+    override fun login(username: String, password: String): UserEntity {
+        return userDao.getUser(username, password)
     }
 }

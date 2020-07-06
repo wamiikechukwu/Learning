@@ -8,7 +8,9 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import org.mockito.Mock
+import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
+import org.mockito.internal.verification.VerificationModeFactory.times
 
 //TELL THE IDE TO RUN WITH JUnit$
 @RunWith(JUnit4::class)
@@ -18,7 +20,7 @@ class RegistrationTaskTest {
     @Mock
     lateinit var userRepository: IUserRepository
 
-    lateinit var registrationTask: RegistrationTask
+    private lateinit var registrationTask: RegistrationTask
 
     private val fakeUserEntity = UserEntity(
         Username = "someone",
@@ -55,4 +57,16 @@ class RegistrationTaskTest {
         registrationTask.executeTask(testEmail)
     }
 
+    @Test(expected = IllegalArgumentException::class)
+    fun shouldThrowAnExceptionWhenPasswordIsEmpty() {
+        val testPassword = fakeUserEntity
+        testPassword.Password = ""
+        registrationTask.executeTask(testPassword)
+    }
+
+    @Test
+    fun shouldSaveTheNewUser() {
+        registrationTask.executeTask(userEntity = fakeUserEntity)
+        Mockito.verify(userRepository, times(1)).saveUser(user = fakeUserEntity)
+    }
 }
