@@ -4,7 +4,7 @@ import com.me.registrationtask.module.UserEntity
 import com.me.registrationtask.repository.IUserRepository
 
 //THIS CLASS CONSTRUCTOR TAKES IN A PARAMETER FROM THE IUserRepository AS AN OBJECT
-class RegistrationTask(private val userRepository: IUserRepository) {
+class RegistrationTask constructor(private val userRepository: IUserRepository) {
 
     fun executeTask(userEntity: UserEntity) {
 
