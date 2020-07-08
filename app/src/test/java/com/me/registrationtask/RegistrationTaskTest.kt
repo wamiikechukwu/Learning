@@ -23,10 +23,11 @@ class RegistrationTaskTest {
     private lateinit var registrationTask: RegistrationTask
 
     private val fakeUserEntity = UserEntity(
-        Username = "someone",
-        Name = "name",
-        Password = "myPassword",
-        Email = "someone@gmail.com"
+        id = 1,
+        username = "someone",
+        name = "name",
+        password = "myPassword",
+        email = "someone@gmail.com"
     )
 
     @Before
@@ -37,31 +38,31 @@ class RegistrationTaskTest {
     }
 
     @Test(expected = IllegalArgumentException::class)
-    //h
+
     fun shouldThrowAnExceptionWhenUserNameIsEmpty() {
         val testUserName = fakeUserEntity
-        testUserName.Username = ""
+        testUserName.username = ""
         registrationTask.executeTask(testUserName)
     }
 
     @Test(expected = IllegalArgumentException::class)
     fun shouldThrowAnExceptionWhenNameIsEmpty() {
         val testName = fakeUserEntity
-        testName.Name = ""
+        testName.name = ""
         registrationTask.executeTask(testName)
     }
 
     @Test(expected = IllegalArgumentException::class)
     fun shouldThrowAnExceptionWhenEmailIsEmpty() {
         val testEmail = fakeUserEntity
-        testEmail.Email = ""
+        testEmail.email = ""
         registrationTask.executeTask(testEmail)
     }
 
     @Test(expected = IllegalArgumentException::class)
     fun shouldThrowAnExceptionWhenPasswordIsEmpty() {
         val testPassword = fakeUserEntity
-        testPassword.Password = ""
+        testPassword.password = ""
         registrationTask.executeTask(testPassword)
     }
 

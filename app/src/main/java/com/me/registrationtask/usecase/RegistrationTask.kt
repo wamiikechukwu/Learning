@@ -8,10 +8,10 @@ class RegistrationTask constructor(private val userRepository: IUserRepository) 
 
     fun executeTask(userEntity: UserEntity) {
 
-        if (userEntity.Username.isEmpty()) throw IllegalArgumentException("Username is empty...")
-        if (userEntity.Name.isEmpty()) throw IllegalArgumentException("Name is empty...")
-        if (userEntity.Password.isEmpty()) throw IllegalArgumentException("Password is empty...")
-        if (userEntity.Email.isEmpty()) throw IllegalArgumentException("Email is empty...")
+        if (userEntity.username.isEmpty()) throw IllegalArgumentException("Username is empty...")
+        if (userEntity.name.isEmpty()) throw IllegalArgumentException("Name is empty...")
+        if (userEntity.password.isEmpty()) throw IllegalArgumentException("Password is empty...")
+        if (userEntity.email.isEmpty()) throw IllegalArgumentException("Email is empty...")
 
         userRepository.saveUser(userEntity)
     }
