@@ -1,8 +1,7 @@
-package com.me.registrationtask
+package com.me.registrationtask.usecase
 
 import com.me.registrationtask.module.UserEntity
 import com.me.registrationtask.repository.IUserRepository
-import com.me.registrationtask.usecase.RegistrationTask
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

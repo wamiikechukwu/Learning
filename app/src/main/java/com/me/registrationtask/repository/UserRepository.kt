@@ -12,4 +12,5 @@ class UserRepository constructor(private val userDao: UserDao) :
     override fun login(username: String, password: String): UserEntity {
         return userDao.getUser(username, password)
     }
+
 }
