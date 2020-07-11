@@ -14,8 +14,13 @@ import org.mockito.MockitoAnnotations
 @RunWith(JUnit4::class)
 class UserRepositoryTest {
 
+//    THIS IS THE DEPENDENCY WHICH IS CONSTRUCTORS IN A CLASS
+//    THE CONSTRUCTORS IS MOST TIMES AN INTERFACE
+
     @Mock
     lateinit var userDao: UserDao
+
+//    THIS IS THE NAME OF THE CLASS, WHICH IS A TYPE OF THE CLASS
 
     lateinit var userRepository: UserRepository
 
